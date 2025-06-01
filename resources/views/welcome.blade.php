@@ -10,9 +10,10 @@
             <h1 class="display-4 text-primary mb-2 hero-title">Thirsty Thursday Quench Quest</h1>
             <div class="brand-gradient mb-3"></div>
             <p class="lead mb-4">Be one of the <span style="color:#ff3b3f;font-weight:bold;">first 3</span> to check in
+                to this week’s interesting location,
                 and win a prize!<br>
-                <span class="prize-desc">🥇 First: <b>Choice of smoothie, milkshake, iced coffee, or hot drink</b><br>
-                🥈🥉 Second/Third: <b>Hot or soft drink</b></span>
+                <span class="prize-desc">🥇 First Checkin: <b>Get a free drink from our menu including; Smoothies, Milkshakes & Iced Coffees</b><br>
+                🥈🥉 Second & Third: <b>Get a free hot drink or soft drink of your choice</b></span>
             </p>
             <div class="how-it-works mx-auto mb-4 how-it-works-container">
                 <div class="row text-center">
@@ -41,37 +42,35 @@
         @endphp
 
         @if ($current)
-            <section class="card mb-4 shadow-sm location-card">
+            <section class="card mb-4 shadow-sm location-card p-3">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="p-2">
-                            <h2 class="h5 text-secondary mb-3 mt-5 text-center">This Week’s Location</h2>
-                            <h3 id="location-name" class="mb-1">{{ $current->name }}</h3>
-                            <p id="location-desc" class="mb-2">{{ $current->description }}</p>
-                            <small id="location-date" class="text-muted">Posted
-                                on {{ $current->created_at->format('d M Y') }}</small>
-                            @if ($current->image_path)
-                                <div class="mt-3 text-center">
-                                    <img
-                                        src="{{ asset('storage/' . $current->image_path) }}"
-                                        alt="{{ $current->name }}"
-                                        class="img-fluid rounded shadow img-location"
-                                        loading="lazy"
-                                    />
-                                </div>
-                            @endif
-                            <div class="text-center mt-6">
-                                <button id="check-in" class="btn btn-success btn-lg px-5 py-2">
-                                    Check
-                                    In
-                                </button>
+                        @if ($current->image_path)
+                            <div class="mb-3 text-center">
+                                <img
+                                    src="{{ asset('storage/' . $current->image_path) }}"
+                                    alt="{{ $current->name }}"
+                                    class="img-fluid rounded shadow img-location"
+                                    loading="lazy"
+                                />
                             </div>
+                        @endif
+                        <h3 id="location-name" class="mb-1">{{ $current->name }}</h3>
+                        <p id="location-desc" class="mb-2">{{ $current->description }}</p>
+                        <small id="location-date" class="text-muted">Posted
+                            on {{ $current->created_at->format('d M Y') }}</small>
+
+                        <div class="text-center mt-6">
+                            <button id="check-in" class="btn btn-success btn-lg px-5 py-2">
+                                Check
+                                In
+                            </button>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="map-section mb-5 p-2">
-                            <h2 class="h5 text-secondary text-center mb-3 mt-5">🗺️ Map of Nearby Locations</h2>
-                            <div class="map-loading-spinner" id="map-loading-spinner" style="display:none;text-align:center;padding:2em;">
+                        <div class="map-section mb-5" style="padding: 0 !important;">
+                            <div class="map-loading-spinner" id="map-loading-spinner"
+                                 style="display:none;text-align:center;padding:2em;">
                                 <div class="spinner-border text-primary" role="status">
                                     <span class="visually-hidden">Loading map...</span>
                                 </div>
@@ -90,8 +89,8 @@
                         @endphp
 
                         {{-- Leaderboard Section --}}
-                        <section class="leaderboard mb-5 p-2">
-                            <h2 class="h5 text-secondary text-center mb-3 mt-5">🏆
+                        <section class="leaderboard mb-5">
+                            <h2 class="h5 text-secondary text-center mb-3">🏆
                                 Leaderboard</h2>
                             @if ($leaderboard->isEmpty())
                                 <p class="text-center">No winners yet.</p>
@@ -156,7 +155,8 @@
                                 <div id="checkin-error" class="alert alert-danger d-none"></div>
                                 <button type="submit" class="btn btn-primary w-100" id="checkin-submit-btn">
                                     <span id="checkin-submit-text">Submit</span>
-                                    <span id="checkin-submit-spinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                                    <span id="checkin-submit-spinner" class="spinner-border spinner-border-sm d-none"
+                                          role="status" aria-hidden="true"></span>
                                 </button>
                             </form>
                         </div>
