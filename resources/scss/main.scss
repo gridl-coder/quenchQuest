@@ -67,7 +67,7 @@
 // Map section
 .map-section {
     max-width: 700px;
-    margin: 2rem auto;
+    margin: 0 auto 2rem auto;
     padding: 0 1rem;
 
     h2 {
@@ -81,4 +81,195 @@
         border: 2px solid $secondary-color;
         border-radius: 6px;
     }
+}
+
+// Custom classes for inline styles
+.brand-gradient {
+    height: 4px;
+    width: 80px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #ff3b3f, #fff, #ff3b3f);
+}
+
+.step-icon {
+    font-size: 2rem;
+}
+
+.step-title {
+    font-weight: bold;
+}
+
+.step-desc {
+    color: #bbb;
+}
+
+.location-card h2 {
+    text-align: center;
+}
+
+#location-name {
+    font-size: 1.5rem;
+    color: #ff3b3f;
+}
+
+.mt-6 {
+    margin-top: 2.5rem !important;
+}
+
+.img-location {
+    max-height: 260px;
+    border: 3px solid #ff3b3f;
+    background: #111;
+}
+
+.share-btn {
+    border: 1px solid #ff3b3f;
+    color: #ff3b3f;
+    background: transparent;
+    font-weight: bold;
+}
+
+.share-btn:hover {
+    color: #fff;
+    background: #ff3b3f;
+}
+
+body {
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header, .display-4, h1, h2, h3, h4, h5, h6 {
+    color: #fff !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+p, .lead, .text-secondary, .text-muted {
+    color: #fff !important;
+}
+
+.card {
+    background: #181818;
+    border: 1px solid #222;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+.btn-success, .btn-primary {
+    background: #ff3b3f;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(255,59,63,0.15);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-success:hover, .btn-primary:hover {
+    background: #ff1a1f;
+    box-shadow: 0 4px 16px rgba(255,59,63,0.25);
+}
+
+input, textarea, select, .form-control {
+    background: #222;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+}
+input:focus, textarea:focus, select:focus, .form-control:focus {
+    border-color: #ff3b3f;
+    box-shadow: 0 0 0 2px #ff3b3f33;
+    background: #181818;
+    color: #fff;
+}
+
+.modal-content {
+    background: #181818;
+    color: #fff;
+    border-radius: 16px;
+    border: 1px solid #222;
+}
+
+.list-group-item {
+    background: #181818;
+    color: #fff;
+    border: 1px solid #222;
+}
+.list-group-item.active, .list-group-item.bg-primary {
+    background: #ff3b3f !important;
+    color: #fff !important;
+    border: none;
+}
+
+.badge-primary, .bg-primary {
+    background: #ff3b3f !important;
+    color: #fff !important;
+}
+
+a, a:visited {
+    color: #ff3b3f;
+    text-decoration: underline;
+}
+a:hover {
+    color: #fff;
+    background: #ff3b3f;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 0 2px;
+}
+
+footer {
+    color: #fff;
+    background: #181818;
+    border-top: 1px solid #222;
+    padding: 1.5rem 0 0.5rem 0;
+    margin-top: 2rem;
+}
+
+#map {
+    border: 2px solid #ff3b3f !important;
+    border-radius: 12px !important;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: #181818;
+}
+::-webkit-scrollbar-thumb {
+    background: #222;
+    border-radius: 8px;
+}
+
+// --- Classes moved from inline styles ---
+.hero-title {
+    font-size: 2.8rem;
+}
+.prize-desc {
+    font-size: 1.1em;
+}
+.how-it-works-container {
+    max-width: 600px;
+}
+.leaderboard-card {
+    max-width: 420px;
+}
+.leaderboard-rank {
+    font-weight: bold;
+    margin-right: 0.5em;
+}
+.rank-1 { font-size: 1.3em; }
+.rank-2 { font-size: 1.2em; }
+.rank-3 { font-size: 1.1em; }
+.rank-other {
+    font-size: 1.1em;
+    color: #ff3b3f;
+}
+.leaderboard-name {
+    margin-left: 0.5em;
+    font-weight: bold;
+}
+.share-title {
+    font-size: 1.3em;
 }
